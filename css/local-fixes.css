@@ -1,0 +1,31 @@
+/* Local site fixes - appended last on every page */
+
+/* 1) Stop any horizontal left-right scrolling on all screen sizes */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* 2) Safety: keep wide media/content inside the viewport */
+.theme-page, .theme-page-wrapper, .theme-main, .theme-content, .theme-center-column {
+    max-width: 100%;
+}
+
+/* 3) WooCommerce star rating:
+      original used the (missing) "WooCommerce" icon font which rendered
+      the literal letters s/S. Restore real star glyphs with the theme's
+      own star colour (#199CDB). */
+.woocommerce .star-rating {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+}
+.woocommerce .star-rating::before {
+    content: "\2605\2605\2605\2605\2605";
+    font-family: inherit;
+    color: #199CDB;
+}
+.woocommerce .star-rating span::before {
+    content: "\2605\2605\2605\2605\2605";
+    font-family: inherit;
+    color: #199CDB;
+}

@@ -1,0 +1,66 @@
+			.cbs-main.cbs-location-308 .cbs-button:hover,
+			.cbs-main.cbs-location-308 .cbs-state-selected>.cbs-button,
+			.cbs-main.cbs-location-308 .cbs-state-selected>.cbs-button-box>.cbs-button,
+			.cbs-main.cbs-location-308 .cbs-main-list>li.cbs-main-list-item>div.cbs-main-list-item-section-header>.cbs-main-list-item-section-header-step,
+			.cbs-main.cbs-location-308 .cbs-location-list>li:hover,
+			.cbs-main.cbs-location-308 .cbs-location-list>li.cbs-state-selected,
+			.cbs-main.cbs-location-308 .cbs-vehicle-list>li:hover,
+			.cbs-main.cbs-location-308 .cbs-vehicle-list>li:hover .cbs-vehicle-icon,
+			.cbs-main.cbs-location-308 .cbs-vehicle-list>li.cbs-state-selected,
+			.cbs-main.cbs-location-308 .cbs-vehicle-list>li.cbs-state-selected .cbs-vehicle-icon,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-arrow-left:hover,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-arrow-right:hover,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-month-arrow-left:hover,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-month-arrow-right:hover,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-subheader .cbs-calendar-subheader-day-number.cbs-state-selected,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-data a:hover,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-data .cbs-state-selected>a,
+			.cbs-main.cbs-location-308 .cbs-to-tab.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+			.cbs-main.cbs-location-308 .cbs-to-tab.ui-tabs .ui-tabs-nav li.ui-state-hover a
+			{
+				color:#FFFFFF;
+			}	
+			.cbs-main.cbs-location-308 .cbs-service-list>li>.cbs-service-name,
+			.cbs-main.cbs-location-308 .cbs-package-list>li>.cbs-package-name,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-caption,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-subheader .cbs-calendar-subheader-day-number,
+			.cbs-main.cbs-location-308 .cbs-main-list>li.cbs-main-list-item>div.cbs-main-list-item-section-header>.cbs-main-list-item-section-header-header>span,
+			.cbs-main.cbs-location-308 .cbs-form .cbs-agreement-header
+			{
+				color:#222222;
+			}
+			
+			.cbs-main.cbs-location-308 .cbs-form .cbs-form-summary .cbs-form-info,
+			.cbs-main.cbs-location-308 .cbs-package-list>li>.cbs-package-service-list>li,
+			.cbs-main.cbs-location-308 .cbs-main-list>li.cbs-main-list-item>div.cbs-main-list-item-section-header>.cbs-main-list-item-section-header-subheader,
+			.cbs-main.cbs-location-308 .cbs-service-list>li>div.cbs-service-name .cbs-more-content,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-data a,
+			.cbs-main.cbs-location-308 .cbs-agreement>div>div,
+			.cbs-main.cbs-location-308 .cbs-form textarea,
+			.cbs-main.cbs-location-308 .cbs-form input[type="text"],
+			.cbs-main.cbs-location-308 .cbs-form select
+			{
+				color:#4A5F73;
+			}
+			.cbs-main.cbs-location-308 .cbs-form label,
+			.cbs-main.cbs-location-308 .cbs-location-list>li,			
+			.cbs-main.cbs-location-308 .cbs-vehicle-list>li,
+			.cbs-main.cbs-location-308 .cbs-booking-summary>li>span,
+			.cbs-main.cbs-location-308 .cbs-package-list>li>.cbs-package-duration,
+			.cbs-main.cbs-location-308 .cbs-service-list>li>div.cbs-service-price,
+			.cbs-main.cbs-location-308 .cbs-service-list>li>div.cbs-service-duration,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-subheader .cbs-calendar-subheader-day-name,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-data,
+			.cbs-main.cbs-location-308 .cbs-calendar .cbs-calendar-subheader .cbs-calendar-subheader-day-number.cbs-state-disable
+			{
+				color:#4A5F73;
+			}	
+			.cbs-main.cbs-location-308 .cbs-meta-icon,
+			.cbs-main.cbs-location-308 .cbs-vehicle-icon,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-arrow-left,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-arrow-right,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-month-arrow-left,
+			.cbs-main.cbs-location-308 .cbs-calendar-header .cbs-calendar-header-month-arrow-right
+			{
+				color:#4A5F73;
+			}

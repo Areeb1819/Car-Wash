@@ -1,0 +1,586 @@
+/* ============================================================
+   Auto Spa - Simple Clean Stylesheet  (easy/css/style.css)
+   ------------------------------------------------------------
+   Ye ek hi CSS file hai jisme poori website ki styling hai.
+   Class names simple rakhe gaye hain taake samajhna aasan ho.
+
+   Sections (upar se neeche):
+   1.  Variables (colors, spacing)
+   2.  Reset / base
+   3.  Helper classes (container, section, buttons)
+   4.  Header + navigation
+   5.  Hero (home banner)
+   6.  Page banner (andar wale pages ka top)
+   7.  Section titles
+   8.  Grid / columns
+   9.  Cards (features, services, pricing, projects...)
+   10. Forms
+   11. Footer
+   12. Shortcode components (accordion, tabs, progress...)
+   13. Responsive (mobile)
+   ============================================================ */
+
+/* ============ 1. VARIABLES ============ */
+:root {
+    --blue: #199cdb;          /* main theme color */
+    --blue-dark: #1377a8;
+    --yellow: #ffb400;        /* accent color */
+    --dark: #1f2328;          /* headings / footer bg */
+    --gray: #6b7280;          /* paragraphs */
+    --light: #f4f7f9;         /* light section bg */
+    --border: #e3e8ee;
+    --white: #ffffff;
+    --radius: 8px;            /* rounded corners */
+    --shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    --font: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+    --max: 1180px;            /* page max width */
+}
+
+/* ============ 2. RESET / BASE ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font);
+    color: var(--gray);
+    line-height: 1.7;
+    background: var(--white);
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--dark);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+h1 { font-size: 46px; }
+h2 { font-size: 34px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+
+p { margin-bottom: 16px; }
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--blue-dark); }
+
+img { max-width: 100%; display: block; }
+
+ul { list-style: none; }
+
+/* ============ 3. HELPERS ============ */
+
+/* Center the content with equal space on both sides */
+.container {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Every big block on the page */
+.section { padding: 80px 0; }
+.section--light { background: var(--light); }
+.section--dark { background: var(--dark); }
+.section--dark h2, .section--dark h3 { color: var(--white); }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    padding: 13px 28px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+.btn:hover { background: var(--blue-dark); color: var(--white); }
+
+.btn--yellow { background: var(--yellow); color: var(--dark); }
+.btn--yellow:hover { background: #e6a200; color: var(--dark); }
+
+.btn--outline {
+    background: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+.btn--outline:hover { background: var(--blue); color: var(--white); }
+
+/* Small label above a heading (like "Wash Packages") */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+
+/* ============ 4. HEADER + NAV ============ */
+
+/* Top thin bar with email + social links */
+.topbar {
+    background: var(--dark);
+    color: #cbd5e1;
+    font-size: 14px;
+}
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+}
+.topbar a { color: #cbd5e1; }
+.topbar a:hover { color: var(--white); }
+.topbar-social a { margin-left: 14px; font-weight: 600; }
+
+/* Main header with logo + menu */
+.header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.logo img { height: 44px; width: auto; }
+
+/* The menu */
+.nav ul { display: flex; }
+.nav > ul > li { position: relative; }
+.nav a {
+    display: block;
+    padding: 28px 16px;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 15px;
+}
+.nav a:hover, .nav .active > a { color: var(--blue); }
+
+/* Dropdown submenu */
+.nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--blue);
+}
+.nav ul li:hover > ul { display: block; }
+.nav ul ul a { padding: 11px 18px; font-weight: 500; font-size: 14px; }
+.nav ul ul a:hover { background: var(--light); }
+
+/* Hamburger button - only shows on mobile */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+/* ============ 5. HERO (HOME BANNER) ============ */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
+                url("../../images/slider_01.jpg") center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+}
+.hero h1 {
+    color: var(--white);
+    font-size: 56px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.hero p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.hero .btn { margin-top: 24px; }
+
+/* ============ 6. PAGE BANNER (inner pages) ============ */
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+                url("../../images/slider_02.jpg") center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 90px 0;
+}
+.page-banner h1 { color: var(--white); }
+.page-banner .breadcrumb { font-size: 14px; color: #e5e7eb; }
+.page-banner .breadcrumb a { color: #e5e7eb; }
+
+/* ============ 7. SECTION TITLES ============ */
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title .eyebrow {
+    display: block;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.section-title p { max-width: 640px; margin: 12px auto 0; }
+
+/* ============ 8. GRID / COLUMNS ============ */
+.grid { display: grid; gap: 30px; }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Two-column row (text + image) */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* ============ 9. CARDS ============ */
+
+/* Simple feature card */
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: .2s;
+}
+.card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.card h3 { margin-bottom: 10px; }
+.card .icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+/* Check list with blue ticks */
+.tick-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+.tick-list li::before {
+    content: "\2714";              /* check mark */
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* Pricing / wash package */
+.price-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+}
+.price-card.featured { border-color: var(--blue); box-shadow: var(--shadow); }
+.price-card h3 { text-align: center; }
+.price {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--blue);
+    margin: 10px 0;
+}
+.price small { font-size: 16px; color: var(--gray); font-weight: 400; }
+.price-card .btn { display: block; text-align: center; margin-top: 20px; }
+
+/* Project / gallery image card */
+.project { position: relative; overflow: hidden; border-radius: var(--radius); }
+.project img { width: 100%; height: 240px; object-fit: cover; transition: .3s; }
+.project:hover img { transform: scale(1.06); }
+.project .caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .8));
+    color: var(--white);
+}
+.project .caption h4 { color: var(--white); margin: 0; font-size: 17px; }
+.project .caption span { font-size: 13px; color: #d1d5db; }
+
+/* Blog post card */
+.post { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.post img { width: 100%; height: 230px; object-fit: cover; }
+.post .post-body { padding: 22px; }
+.post .date { color: var(--blue); font-size: 13px; font-weight: 600; }
+.post h3 { font-size: 20px; margin: 8px 0; }
+
+/* Testimonial */
+.testimonial {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px;
+    border: 1px solid var(--border);
+}
+.testimonial p { font-style: italic; }
+.testimonial .name { font-weight: 700; color: var(--dark); font-style: normal; }
+.testimonial .car { font-size: 13px; color: var(--gray); }
+
+/* Process steps with big number */
+.step { text-align: center; }
+.step .num {
+    width: 70px; height: 70px; line-height: 70px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/* Counter boxes */
+.counter { text-align: center; padding: 20px; }
+.counter .value { font-size: 46px; font-weight: 800; color: var(--blue); }
+.counter .label { text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+/* Team member */
+.team-member { text-align: center; }
+.team-member img { border-radius: var(--radius); margin: 0 auto 16px; }
+.team-member h4 { margin-bottom: 2px; }
+.team-member span { color: var(--blue); font-size: 14px; }
+
+/* Sidebar widgets (blog shop etc.) */
+.sidebar .widget {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.sidebar .widget h4 { margin-bottom: 14px; }
+.sidebar .widget li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+
+/* Blog layout: content + sidebar */
+.layout-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+}
+.layout-sidebar--left { grid-template-columns: 340px 1fr; }
+
+/* ============ 10. FORMS ============ */
+.form-group { margin-bottom: 18px; }
+label { display: block; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="search"], input[type="number"], input[type="password"],
+select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--dark);
+    background: var(--white);
+}
+textarea { min-height: 130px; resize: vertical; }
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+/* Info box used on contact pages */
+.info-box { text-align: center; padding: 24px; }
+.info-box .icon {
+    font-size: 30px; color: var(--blue); margin-bottom: 10px;
+}
+.info-box h4 { margin-bottom: 6px; }
+
+/* ============ 11. FOOTER ============ */
+.footer {
+    background: var(--dark);
+    color: #9aa4b2;
+    padding: 70px 0 0;
+}
+.footer h4 { color: var(--white); margin-bottom: 18px; }
+.footer a { color: #9aa4b2; }
+.footer a:hover { color: var(--blue); }
+.footer li { padding: 5px 0; }
+.footer .newsletter input {
+    margin-bottom: 10px;
+    background: #2b3036;
+    border-color: #343a41;
+    color: var(--white);
+}
+.footer .copyright {
+    border-top: 1px solid #2b3036;
+    margin-top: 50px;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ============ 12. SHORTCODE COMPONENTS ============ */
+
+/* Notice / alert */
+.notice {
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    border-left: 5px solid var(--blue);
+    background: var(--light);
+    margin-bottom: 16px;
+}
+.notice--warning { border-color: var(--yellow); }
+.notice--danger { border-color: #e3342f; }
+.notice--success { border-color: #38c172; }
+
+/* Blockquote */
+blockquote {
+    border-left: 5px solid var(--blue);
+    padding: 16px 24px;
+    background: var(--light);
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Accordion (uses <details>/<summary> - no JS needed) */
+.accordion details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    padding: 14px 18px;
+}
+.accordion summary {
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+}
+.accordion details[open] summary { color: var(--blue); margin-bottom: 10px; }
+
+/* Progress bar */
+.progress { margin-bottom: 18px; }
+.progress .bar {
+    height: 12px;
+    background: var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.progress .bar span {
+    display: block;
+    height: 100%;
+    background: var(--blue);
+}
+.progress .label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+/* Tabs (simple buttons + panels, see main.js) */
+.tabs .tab-buttons { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.tabs .tab-buttons button {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark);
+}
+.tabs .tab-buttons button.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.tabs .tab-panel { display: none; }
+.tabs .tab-panel.active { display: block; }
+
+/* Simple table (used in shortcodes + cart) */
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td {
+    padding: 14px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+.table th { background: var(--light); color: var(--dark); }
+.table--cart img { width: 70px; height: auto; border-radius: 4px; }
+
+/* Social profiles list */
+.social-list { display: flex; gap: 12px; flex-wrap: wrap; }
+.social-list a {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.social-list a:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+/* Call to action band */
+.cta {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0;
+}
+.cta h2 { color: var(--white); }
+
+/* Countdown (maintenance page) */
+.countdown { display: flex; gap: 16px; justify-content: center; margin-top: 24px; }
+.countdown div {
+    background: rgba(255, 255, 255, .12);
+    padding: 18px 22px;
+    border-radius: var(--radius);
+    text-align: center;
+    min-width: 90px;
+}
+.countdown .n { font-size: 34px; font-weight: 800; color: var(--white); }
+.countdown .t { font-size: 13px; text-transform: uppercase; color: #cbd5e1; }
+
+/* ============ 13. RESPONSIVE (MOBILE) ============ */
+@media (max-width: 900px) {
+    h1 { font-size: 34px; }
+    h2 { font-size: 26px; }
+    .hero { padding: 100px 0; }
+    .hero h1 { font-size: 34px; }
+
+    .grid--4 { grid-template-columns: repeat(2, 1fr); }
+    .grid--3 { grid-template-columns: repeat(2, 1fr); }
+    .split, .layout-sidebar, .layout-sidebar--left { grid-template-columns: 1fr; }
+
+    /* Show hamburger, hide menu until opened */
+    .nav-toggle { display: block; }
+    .nav {
+        display: none;
+        position: absolute;
+        left: 0; right: 0; top: 80px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        padding: 10px 0;
+    }
+    .nav.open { display: block; }
+    .nav ul { display: block; }
+    .nav a { padding: 12px 20px; }
+    .nav ul ul {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border: none;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 560px) {
+    .grid--4, .grid--3, .grid--2 { grid-template-columns: 1fr; }
+    .section { padding: 50px 0; }
+}
